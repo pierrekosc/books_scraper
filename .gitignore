@@ -1,0 +1,6 @@
+# Exclure les fichiers sensibles
+venv/
+__pycache__/
+output/
+images/
+*.csv
