@@ -90,4 +90,4 @@ def save_to_csv(data, filename="output/single_product.csv"):
 if __name__ == "__main__":
     book_url = 'https://books.toscrape.com/catalogue/tipping-point-for-planet-earth-how-close-are-we-to-the-edge_643/index.html'
     bookdata = scrape_book_data(book_url)
-    save_to_csv(book_data)
+    save_to_csv(bookdata)
