@@ -1,4 +1,3 @@
-
 Description
 
 Ce projet est un scraper permettant d'extraire les données de tous les livres disponibles sur le site Books to Scrape (https://books.toscrape.com/).
