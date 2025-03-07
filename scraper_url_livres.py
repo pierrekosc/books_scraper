@@ -1,8 +1,21 @@
+"""
+scraper_url_livres.py
+
+Script Python permettant de récupérer (scraper) les URL de tous les livres d'une catégorie donnée sur le site 'Books to Scrape' (https://books.toscrape.com).
+
+Fonctionnalités principales :
+- Extraction automatisée des URL des livres sur chaque page d'une catégorie précise.
+- Gestion automatique de la pagination jusqu'à la dernière page disponible.
+- Sauvegarde des URLs extraites dans un fichier CSV structuré.
+Usage :
+Exécuter directement dans un terminal :
+    python scraper_url_livres.py
+"""
 import requests
 from bs4 import BeautifulSoup
 import csv
 
-
+# Fonction pour récupérer les URL des livres sur une page précise
 def get_books_urls(category_url, csv_filename):
     """Scrape les URLs des livres d'une catégorie et les enregistre dans un fichier CSV."""
     base_url = "https://books.toscrape.com/catalogue/"

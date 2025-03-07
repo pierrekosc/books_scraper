@@ -4,3 +4,4 @@ __pycache__/
 output/
 images/
 *.csv
+.DS_Store
