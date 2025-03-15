@@ -19,22 +19,23 @@ from bs4 import BeautifulSoup
 from scraper_single import scrape_book_data, save_to_csv
 
 
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin  # <-- Ajout essentiel ici
+
 def get_books_urls(category_url):
     """Récupère toutes les URLs des livres d'une catégorie (gère la pagination)."""
     book_urls = []
-    # Tant qu'il y a une page suivante, on continue le scraping
     while category_url:
         response = requests.get(category_url)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        # Récupération des URLs des livres sur la page courante
+
         for link in soup.select("h3 a"):
-            book_urls.append(
-                "https://books.toscrape.com/catalogue/" + link["href"].replace("../", ""))
-        # Vérifie si une page suivante existe et met à jour category_url
+            book_urls.append(urljoin(category_url, link["href"]))  # ✅ Correction ici
+
         next_page = soup.select_one(".next a")
-        category_url = "https://books.toscrape.com/catalogue/" + \
-            next_page["href"] if next_page else None
+        category_url = urljoin(category_url, next_page["href"]) if next_page else None  # ✅ Correction pagination ici
 
     return book_urls
 
