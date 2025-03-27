@@ -31,11 +31,11 @@ Note
 URL de l'image de couverture
 
 Technologies utilisées:
-• Python 3
-• Requests (récupération HTML)
-• BeautifulSoup4 (parsing HTML)
-• CSV (stockage des données)
-• venv (environnement virtuel)
+-Python 3
+-Requests (récupération HTML)
+-BeautifulSoup4 (parsing HTML)
+-CSV (stockage des données)
+-venv (environnement virtuel)
 
 Installation:
 1. Clonez le repository :
@@ -63,8 +63,8 @@ python scraper_all_categories.py
 
 Gestion des fichiers exclus
 Le fichier .gitignore exclut clairement :
-• Le dossier venv/ (environnement virtuel)
-• Le dossier images/ (images téléchargées)
+-Le dossier venv/ (environnement virtuel)
+-Le dossier images/ (images téléchargées)
 Les fichiers CSV 
 Les données extraites seront enregistrées dans le dossier output/ sous forme de fichiers CSV, et les images seront sauvegardées dans le dossier images/.
 
