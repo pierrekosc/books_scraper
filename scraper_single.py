@@ -26,6 +26,8 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import os
+os.makedirs("images", exist_ok=True)
+os.makedirs("output", exist_ok=True)
 
 #Fonction principale pour scraper les données d'un livre
 def scrape_book_data(url):
